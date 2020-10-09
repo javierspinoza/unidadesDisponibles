@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javier spinoza!</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+
+    <div id='app'>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-xs-12">  
+                    <h3>Productos</h3>
+                 
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="piña" v-model="producto">
+                        <label class="form-check-label" for="inlineRadio1">Piña</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="pera" v-model="producto">
+                        <label class="form-check-label" for="inlineRadio2">Pera</label>
+                    </div>  <br>
+
+                    <label>Cantidad</label>
+                    <input type="number"class="col-md-12" class="form control"placeholder="ingrese cantidad" v-model="cantidad">
+                    
+                    <input type="button"value="agregar"class="btn btn-success" v-on:click="procesar">  
+                </div>     
+
+                <div class="col-md-6 col-xs-12">
+                    <h3>Información productos</h3>  
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr class="bg-dark text-white">
+                                <td>Producto</td>
+                                <td>Cantidad</td>
+                                <td>Total</td>
+                                <td>Unid Disponibles</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr v-for="objeto in arrayDatos" v-bind:style="objeto.cantidad>80?'color:red':'color:green'">
+                                <td v-text="objeto.producto"></td>
+                                <td v-text="objeto.cantidad"></td>
+                                <td v-text="objeto.total"></td>
+                                <td v-text="objeto.unid"></td>
+                                <!-- <td v-text="objeto.unid"></td> -->
+                            </tr>
+              
+                        </tbody>
+
+                    </table>      
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    
+
+</body>
+
+<script src="js/vue.js"></script> 
+<script src="js/main.js"></script> 
+</html>
