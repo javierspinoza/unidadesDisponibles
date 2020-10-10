@@ -38,7 +38,12 @@ var app = new Vue({
                         this.arrayDatos.push({producto:this.producto,cantidad:this.cantidad,total:this.total,unid:this.disP})                                    
                 
             }
+        
+        },
+        hola(){
+            
         }
+    
     },
 
 
